@@ -1,0 +1,333 @@
+:root {
+  box-sizing: border-box;
+  font-size: 16px;
+  --column-width: 14.75rem;
+  --row-increment: 0.5rem;
+  --pin_border_radius: 1rem;
+  --pin_small: 27;
+  --pin_medium: 34;
+  --pin_large: 59;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  padding-top: 80px;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  left: 0;
+  top: 0;
+  position: fixed;
+  background-color: white;
+}
+
+header #navbar-pinterest {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#pinterest-icon {
+  display: flex;
+}
+
+.tamañoLogo {
+  width: 47px;
+  height: 47px;
+}
+
+.Mensaje {
+  height: 40px;
+  width: 40px;
+}
+
+.Campana {
+  height: 40px;
+  width: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header #navbar-pinterest ul li a {
+  margin-right: 15px;
+  font-size: 13px;
+  color: #080808;
+  display: flex;
+
+}
+
+header #navbar-pinterest a {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.link:hover,
+.link-active {
+  color: white;
+  background: black;
+}
+
+.link {
+  border-radius: 24px;
+  line-height: 48px;
+  padding: 0 10px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tamañoIconos div {
+  margin-right: 15px;
+  font-size: 13px;
+  color: #080808;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.tamañoIconos div a i {
+  font-size: 13px;
+  color: #080808;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.search_box {
+  display: flex;
+  border-radius: 100px;
+  border: 1px solid #ddd;
+  width: 75%;
+  
+}
+
+.search_box span {
+  width: 100%;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 10px;
+  align-items: center;
+
+}
+
+.search_box span input {
+  border: none;
+  outline: none;
+  color: #080808;
+  font-size: 17px;
+  width: 93%;
+  background-color: #fcfcfc;
+  padding: 0 0px;
+}
+
+.search_box:hover {
+  box-shadow: -1px 1px 6px #bbb;
+}
+
+.search_box .fa-search {
+  font-size: 15px;
+  color: #aaa;
+}
+
+.search_box .fa-search img {
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+}
+
+.tamañoIconos {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.iconoCamp {
+  width: 100%;
+  margin: 3px;
+}
+
+.iconoMensaje {
+  width: 100%;
+  margin: 3px;
+}
+
+.fotoPerfil {
+  width: 40%;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+#content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, var(--column-width));
+  grid-auto-rows: var(--row-increment);
+  justify-content: center;
+  background-color: rgb(255, 254, 254);
+  position: absolute;
+  z-index: -1;
+}
+
+/*características de las tarjetas*/
+.card-image {
+  padding: 0;
+  border-radius: var(--pin_border_radius);
+  margin: 15px 10px;
+  position: relative;
+  background-color: red;
+}
+
+.pin-small {
+  grid-row-end: span var(--pin_small);
+}
+
+.pin-medium {
+  grid-row-end: span var(--pin_medium);
+}
+
+.pin-large {
+  grid-row-end: span var(--pin_large);
+}
+
+@media screen and (max-width: 470px) {
+  .linkoculto {
+    display: none;
+  }
+
+  
+}
+main section div img{
+  height: 100%;
+  width: 100%;
+  border-radius: var(--pin_border_radius);
+}
+
+
+.card-image:hover .front-cap{
+  display: block;
+}
+
+
+/* Los botones de las tarjetas */
+
+.front-cap{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0.938rem;
+  background-color: rgb(0, 0, 0, .5);
+  border-radius: inherit;
+  display: none;
+}
+
+/* Clase diseñada para organizar los elementos y evitar desactivar el display: none en la .front-cap */
+
+.second-cap{
+  display: flex;
+  width: auto;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+/* Clase diseñada para dividir los elementos de la parte superior, de los elementos de la parte inferior */
+
+.elements-up{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+/* Texto superior */
+
+.description{
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.icon-more{
+  width: 0.938rem;
+  height: 0.938rem;
+}
+
+/* Guardar imagen */
+
+.save-img{
+  display: flex;
+  height: 3rem;
+  background-color: rgb(236, 4, 4);
+  width: 5.5rem;
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+
+}
+
+.save-img:hover{
+  background-color: rgb(190, 0, 0);
+}
+
+/* Clase diseñada para dividir los elementos de la parte inferior, de los elementos de la parte superior */
+
+.elements-bottom{
+  width: 100%;
+  height: 2rem;
+  align-self: flex-end;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.link-icon-small{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  background-color: rgb(235, 235, 235);
+  border-radius: 10rem;
+}
+
+.link-icon-small:hover{
+  background-color: rgb(215, 215, 215);
+}
+
+.img-small{
+  width: 1.3rem;
+  height: 1.3rem;
+}
